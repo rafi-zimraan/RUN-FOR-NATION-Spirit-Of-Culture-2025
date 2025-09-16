@@ -109,7 +109,7 @@ const About = () => {
                 <li className="services__modal-service">
                   <i className="uil uil-check-circle services__modal-icon"></i>
                   <p className="services__modal-info">
-                    Umur minimal peserta yaitu 10 tahun (di bawah usia yang
+                    Umur minimal peserta yaitu 12 tahun (di bawah usia yang
                     telah ditentukan, wajib didampingi orangtua).
                   </p>
                 </li>

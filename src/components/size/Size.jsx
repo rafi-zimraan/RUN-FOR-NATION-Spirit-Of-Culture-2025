@@ -19,7 +19,7 @@ const Size = () => {
         data-aos-duration="1000"
         data-aos-delay="100"
       >
-        Dewasa & Kids
+        Dewasa & kids
       </span>
 
       <div className="container grid gap-16">

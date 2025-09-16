@@ -156,30 +156,14 @@ export default Contact;
 //             name="namaLengkap"
 //             required
 //             placeholder="Masukkan nama lengkap"
-//             style={{
-//               width: "100%",
-//               padding: "0.75rem",
-//               borderRadius: "10px",
-//               border: "1px solid #ccc",
-//               marginTop: "0.5rem",
-//             }}
+//             style={inputStyle}
 //           />
 //         </div>
 
 //         {/* Jenis Kelamin */}
 //         <div data-aos="fade-left" data-aos-duration="1000">
 //           <label>Jenis Kelamin *</label>
-//           <select
-//             name="jenisKelamin"
-//             required
-//             style={{
-//               width: "100%",
-//               padding: "0.75rem",
-//               borderRadius: "10px",
-//               border: "1px solid #ccc",
-//               marginTop: "0.5rem",
-//             }}
-//           >
+//           <select name="jenisKelamin" required style={inputStyle}>
 //             <option value="">Pilih jenis kelamin</option>
 //             <option value="Laki-laki">Laki-laki</option>
 //             <option value="Perempuan">Perempuan</option>
@@ -193,34 +177,37 @@ export default Contact;
 //             type="text"
 //             name="ttl"
 //             required
-//             placeholder="Contoh: Jakarta, 01-01-2000"
-//             style={{
-//               width: "100%",
-//               padding: "0.75rem",
-//               borderRadius: "10px",
-//               border: "1px solid #ccc",
-//               marginTop: "0.5rem",
-//             }}
+//             placeholder="Contoh: Pontianak, 01-01-2000"
+//             style={inputStyle}
 //           />
 //         </div>
 
 //         {/* Usia */}
 //         <div data-aos="fade-left" data-aos-duration="1000">
-//           <label>Usia *</label>
+//           <label>Usia (Minimal 12 tahun) *</label>
 //           <input
 //             type="number"
 //             name="usia"
 //             min="12"
 //             required
-//             placeholder="Minimal 12 tahun"
-//             style={{
-//               width: "100%",
-//               padding: "0.75rem",
-//               borderRadius: "10px",
-//               border: "1px solid #ccc",
-//               marginTop: "0.5rem",
-//             }}
+//             placeholder="Masukkan usia"
+//             style={inputStyle}
 //           />
+//         </div>
+
+//         {/* Alamat Lengkap */}
+//         <div
+//           data-aos="fade-right"
+//           data-aos-duration="1000"
+//           style={{ gridColumn: "1 / -1" }}
+//         >
+//           <label>Alamat Lengkap *</label>
+//           <textarea
+//             name="alamatLengkap"
+//             required
+//             placeholder="Masukkan alamat lengkap"
+//             style={{ ...inputStyle, height: "100px" }}
+//           ></textarea>
 //         </div>
 
 //         {/* Nomor HP/WA */}
@@ -231,47 +218,26 @@ export default Contact;
 //             name="nomorHP"
 //             required
 //             placeholder="Masukkan nomor HP aktif"
-//             style={{
-//               width: "100%",
-//               padding: "0.75rem",
-//               borderRadius: "10px",
-//               border: "1px solid #ccc",
-//               marginTop: "0.5rem",
-//             }}
+//             style={inputStyle}
 //           />
 //         </div>
 
 //         {/* Email */}
 //         <div data-aos="fade-left" data-aos-duration="1000">
-//           <label>Email (opsional)</label>
+//           <label>Email *</label>
 //           <input
 //             type="email"
 //             name="email"
+//             required
 //             placeholder="Masukkan email aktif"
-//             style={{
-//               width: "100%",
-//               padding: "0.75rem",
-//               borderRadius: "10px",
-//               border: "1px solid #ccc",
-//               marginTop: "0.5rem",
-//             }}
+//             style={inputStyle}
 //           />
 //         </div>
 
 //         {/* Kontak Darurat */}
 //         <div data-aos="fade-right" data-aos-duration="1000">
 //           <label>Kontak Darurat *</label>
-//           <select
-//             name="kontakDarurat"
-//             required
-//             style={{
-//               width: "100%",
-//               padding: "0.75rem",
-//               borderRadius: "10px",
-//               border: "1px solid #ccc",
-//               marginTop: "0.5rem",
-//             }}
-//           >
+//           <select name="kontakDarurat" required style={inputStyle}>
 //             <option value="">Pilih kontak darurat</option>
 //             <option value="Orang Tua Kandung">Orang Tua Kandung</option>
 //             <option value="Suami">Suami</option>
@@ -282,39 +248,120 @@ export default Contact;
 //           </select>
 //         </div>
 
-//         {/* Nama BIB */}
+//         {/* Nomor HP Darurat */}
 //         <div data-aos="fade-left" data-aos-duration="1000">
+//           <label>Nomor HP Darurat *</label>
+//           <input
+//             type="tel"
+//             name="nomorHPDarurat"
+//             required
+//             placeholder="Masukkan nomor HP darurat"
+//             style={inputStyle}
+//           />
+//         </div>
+
+//         {/* Nama BIB */}
+//         <div data-aos="fade-right" data-aos-duration="1000">
 //           <label>Nama BIB *</label>
 //           <input
 //             type="text"
 //             name="namaBIB"
 //             required
 //             placeholder="Masukkan nama BIB"
-//             style={{
-//               width: "100%",
-//               padding: "0.75rem",
-//               borderRadius: "10px",
-//               border: "1px solid #ccc",
-//               marginTop: "0.5rem",
-//             }}
+//             style={inputStyle}
 //           />
 //         </div>
 
-//         {/* Checklist Pernyataan */}
+//         {/* Ukuran Jersey Dewasa */}
+//         <div data-aos="fade-left" data-aos-duration="1000">
+//           <label>Ukuran Jersey Peserta Dewasa</label>
+//           <select name="jerseyDewasa" style={inputStyle}>
+//             <option value="">Pilih ukuran (jika dewasa)</option>
+//             <option value="3S">3S (LD: 44, PB: 62)</option>
+//             <option value="2S">2S (LD: 45, PB: 64)</option>
+//             <option value="XS">XS (LD: 47, PB: 66)</option>
+//             <option value="S">S (LD: 49, PB: 68)</option>
+//             <option value="M">M (LD: 50, PB: 70)</option>
+//             <option value="L">L (LD: 52, PB: 72)</option>
+//             <option value="XL">XL (LD: 54, PB: 74)</option>
+//             <option value="2XL">2XL (LD: 56, PB: 76)</option>
+//             <option value="3XL">3XL (LD: 58, PB: 78)</option>
+//           </select>
+//         </div>
+
+//         {/* Ukuran Jersey Anak */}
+//         <div data-aos="fade-right" data-aos-duration="1000">
+//           <label>Ukuran Jersey Peserta Kids/Anak-anak</label>
+//           <select name="jerseyKids" style={inputStyle}>
+//             <option value="">Pilih ukuran (jika anak-anak)</option>
+//             <option value="2">2 (LD: 30, PB: 40)</option>
+//             <option value="4">4 (LD: 32, PB: 46)</option>
+//             <option value="6">6 (LD: 34, PB: 48)</option>
+//             <option value="8">8 (LD: 36, PB: 50)</option>
+//             <option value="10">10 (LD: 38, PB: 51)</option>
+//           </select>
+//         </div>
+
+//         {/* Jersey Lengan Panjang */}
 //         <div
-//           style={{
-//             gridColumn: "1 / -1", // full width
-//             marginTop: "1rem",
-//           }}
+//           style={{ gridColumn: "1 / -1" }}
 //           data-aos="fade-up"
 //           data-aos-duration="1000"
 //         >
-//           <label
-//             style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}
-//           >
-//             <input type="checkbox" name="pernyataan" required />
-//             Saya menyatakan bahwa segala sesuatu yang terjadi selama race adalah
-//             tanggung jawab saya pribadi (bukan panitia penyelenggara).
+//           <label>
+//             <input type="checkbox" name="lenganPanjang" /> Saya ingin Jersey
+//             Lengan Panjang (+Rp 10.000)
+//           </label>
+//         </div>
+
+//         {/* Riwayat Kesehatan */}
+//         <div
+//           style={{ gridColumn: "1 / -1" }}
+//           data-aos="fade-up"
+//           data-aos-duration="1000"
+//         >
+//           <label>
+//             <input type="checkbox" name="sehat" required /> Saya dalam keadaan
+//             sehat dan sanggup mengikuti kegiatan lari ini
+//           </label>
+//           <br />
+//           <label>
+//             <input type="checkbox" name="kondisiKhusus" /> Saya memiliki kondisi
+//             kesehatan khusus
+//           </label>
+//           <input
+//             type="text"
+//             name="detailKondisi"
+//             placeholder="Jika ada kondisi khusus, sebutkan"
+//             style={{ ...inputStyle, marginTop: "0.5rem" }}
+//           />
+//         </div>
+
+//         {/*  Pernyataan Tanggung Jawab */}
+//         <div
+//           style={{ gridColumn: "1 / -1" }}
+//           data-aos="fade-up"
+//           data-aos-duration="1000"
+//         >
+//           <label>
+//             <input type="checkbox" name="pernyataanPeserta" required />
+//             Pernyataan bahwa segala sesuatu yang terjadi selama race menjadi
+//             tanggung jawab masing-masing peserta. ( Bukan tanggung jawab panitia
+//             penyelenggara )
+//           </label>
+//         </div>
+
+//         {/* Pernyataan Peserta */}
+//         <div
+//           style={{ gridColumn: "1 / -1" }}
+//           data-aos="fade-up"
+//           data-aos-duration="1000"
+//         >
+//           <label>
+//             <input type="checkbox" name="pernyataanTanggungJawab" required />{" "}
+//             Saya menyatakan bahwa seluruh data yang saya isi adalah benar, serta
+//             bersedia mengikuti seluruh aturan panitia Run For Nation 2025 dengan
+//             penuh sportivitas
 //           </label>
 //         </div>
 
@@ -331,7 +378,6 @@ export default Contact;
 //         >
 //           <button
 //             type="submit"
-//             className="button button--flex"
 //             style={{
 //               backgroundColor: "#000",
 //               color: "#fff",
@@ -349,6 +395,15 @@ export default Contact;
 //       </form>
 //     </section>
 //   );
+// };
+
+// // Reusable inline input style
+// const inputStyle = {
+//   width: "100%",
+//   padding: "0.75rem",
+//   borderRadius: "10px",
+//   border: "1px solid #ccc",
+//   marginTop: "0.5rem",
 // };
 
 // export default Contact;

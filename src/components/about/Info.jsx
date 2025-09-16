@@ -18,7 +18,7 @@ const Info = () => {
         data-aos-delay="100"
       >
         <i className="bx bx-user about__icon"></i>
-        <h3 className="about__title">Umur minimal peserta yaitu 10 tahun</h3>
+        <h3 className="about__title">Umur minimal peserta yaitu 12 tahun</h3>
         <span className="about__subtitle">
            (di bawah usia yang telah ditentukan, wajib didampingi orangtua).
         </span>
