@@ -26,7 +26,6 @@ const Payments = () => {
           position: "relative",
         }}
       >
-        {/* Badge */}
         <div
           style={{
             position: "absolute",
@@ -43,7 +42,6 @@ const Payments = () => {
           Most popular
         </div>
 
-        {/* Title */}
         <h2
           style={{ fontSize: "1.5rem", marginBottom: "0.5rem", color: "#000" }}
         >
@@ -55,7 +53,6 @@ const Payments = () => {
           Daftar dan nikmati semua fasilitas peserta eksklusif!
         </p>
 
-        {/* Early Bird Price (dicoret + close) */}
         <p
           style={{
             fontSize: "1rem",
@@ -70,7 +67,6 @@ const Payments = () => {
           (closed)
         </p>
 
-        {/* Harga utama */}
         <h3
           style={{
             fontSize: "3rem",
@@ -82,7 +78,6 @@ const Payments = () => {
           Rp175.000
         </h3>
 
-        {/* Button */}
         <Link to={"/payment"}>
           <button
             style={{
@@ -102,7 +97,6 @@ const Payments = () => {
           </button>
         </Link>
 
-        {/* Fasilitas */}
         <ul
           style={{
             listStyle: "none",
