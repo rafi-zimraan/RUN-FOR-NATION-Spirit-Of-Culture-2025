@@ -5,7 +5,7 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 import Papa from "papaparse";
 
-const MAX_PESERTA = 200;
+const MAX_PESERTA = 85;
 
 const Contact = () => {
   const [isEarlyBirdOpen, setIsEarlyBirdOpen] = useState(true);
@@ -108,11 +108,39 @@ const Contact = () => {
 
 export default Contact;
 
-// ! INI UNTUK PENDAFTARAN FORMINPUT
-// import React from "react";
+// ! MENGUNAKAN ALERT && TEMPLATE FORMINPUT
+// import React, { useState } from "react";
 // import "aos/dist/aos.css";
 
 // const Contact = () => {
+//   const [loading, setLoading] = useState(false);
+//   const [showModal, setShowModal] = useState(false);
+
+//   const handleSubmit = async (e) => {
+//     e.preventDefault(); // cegah reload halaman
+//     setLoading(true);
+
+//     const formData = new FormData(e.target);
+
+//     try {
+//       await fetch(
+//         "https://script.google.com/macros/s/AKfycbyOI_RluOr2du5IdI-YqqWoa3yI2NjsisSDUE5Zg_fF9cXUW_CpSd3aYhF0g9qeW_5n/exec",
+//         {
+//           method: "POST",
+//           body: formData,
+//         }
+//       );
+
+//       setShowModal(true);
+//       e.target.reset(); // reset form setelah sukses
+//     } catch (error) {
+//       alert("Terjadi kesalahan, silakan coba lagi!");
+//       console.error(error);
+//     } finally {
+//       setLoading(false);
+//     }
+//   };
+
 //   return (
 //     <section
 //       className="contact section"
@@ -137,9 +165,9 @@ export default Contact;
 //         Silakan isi data dengan lengkap dan benar
 //       </span>
 
+//       {/* Ubah jadi pakai onSubmit */}
 //       <form
-//         action="https://script.google.com/macros/s/AKfycbyHllYQ9Nx6lT0xTXaL39FL_3wetGHSB9j1IqxfPhSF-TwwHrJvri9Ka3GGolR-OZ-y/exec"
-//         method="POST"
+//         onSubmit={handleSubmit}
 //         style={{
 //           display: "grid",
 //           gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
@@ -337,7 +365,7 @@ export default Contact;
 //           />
 //         </div>
 
-//         {/*  Pernyataan Tanggung Jawab */}
+//         {/* Pernyataan Tanggung Jawab */}
 //         <div
 //           style={{ gridColumn: "1 / -1" }}
 //           data-aos="fade-up"
@@ -346,8 +374,8 @@ export default Contact;
 //           <label>
 //             <input type="checkbox" name="pernyataanPeserta" required />
 //             Pernyataan bahwa segala sesuatu yang terjadi selama race menjadi
-//             tanggung jawab masing-masing peserta. ( Bukan tanggung jawab panitia
-//             penyelenggara )
+//             tanggung jawab masing-masing peserta. (Bukan tanggung jawab panitia
+//             penyelenggara)
 //           </label>
 //         </div>
 
@@ -378,6 +406,7 @@ export default Contact;
 //         >
 //           <button
 //             type="submit"
+//             disabled={loading}
 //             style={{
 //               backgroundColor: "#000",
 //               color: "#fff",
@@ -387,12 +416,104 @@ export default Contact;
 //               cursor: "pointer",
 //               fontSize: "1rem",
 //               fontWeight: "bold",
+//               opacity: loading ? 0.6 : 1,
 //             }}
 //           >
-//             Kirim Pendaftaran
+//             {loading ? "Mengirim..." : "Kirim Pendaftaran"}
 //           </button>
 //         </div>
 //       </form>
+
+//       {/* Modal */}
+//       {showModal && (
+//         <div
+//           style={{
+//             position: "fixed",
+//             top: 0,
+//             left: 0,
+//             width: "100%",
+//             height: "100%",
+//             background: "rgba(0,0,0,0.6)",
+//             display: "flex",
+//             justifyContent: "center",
+//             alignItems: "center",
+//             zIndex: 9999,
+//           }}
+//         >
+//           <div
+//             style={{
+//               background: "#fff",
+//               padding: "2rem",
+//               borderRadius: "12px",
+//               maxWidth: "500px",
+//               width: "90%",
+//               boxShadow: "0 4px 12px rgba(0,0,0,0.3)",
+//             }}
+//           >
+//             <h3 style={{ marginTop: 0, marginBottom: "1rem" }}>
+//               Pendaftaran Berhasil 🎉
+//             </h3>
+//             <p style={{ marginBottom: "1rem", lineHeight: "1.5" }}>
+//               Silakan lakukan transfer ke rekening berikut:
+//               <br />
+//               <strong>Bank: BSI</strong>
+//               <br />
+//               <strong>No. Rekening: 2024232215</strong>
+//               <br />
+//               <strong>Atas Nama: Yahya Organizer</strong>
+//             </p>
+//             <p style={{ marginBottom: "1rem", lineHeight: "1.5" }}>
+//               Setelah transfer, konfirmasi via WhatsApp:
+//               <br />
+//               <a
+//                 href="https://wa.me/6285393669366"
+//                 target="_blank"
+//                 rel="noopener noreferrer"
+//                 style={{ color: "blue", textDecoration: "underline" }}
+//               >
+//                 Meli (0853-9366-9366)
+//               </a>
+//               <br />
+//               <a
+//                 href="https://wa.me/6281250721792"
+//                 target="_blank"
+//                 rel="noopener noreferrer"
+//                 style={{ color: "blue", textDecoration: "underline" }}
+//               >
+//                 Wildan (0812-5072-1792)
+//               </a>
+//             </p>
+//             <a
+//               href="https://chat.whatsapp.com/DcIe3ywYk4PF7NGrcdPIK0"
+//               target="_blank"
+//               rel="noopener noreferrer"
+//               style={{
+//                 display: "inline-block",
+//                 marginBottom: "1rem",
+//                 color: "green",
+//                 fontWeight: "bold",
+//                 textDecoration: "underline",
+//               }}
+//             >
+//               👉 Gabung Grup WhatsApp Peserta
+//             </a>
+//             <br />
+//             <button
+//               onClick={() => setShowModal(false)}
+//               style={{
+//                 padding: "0.5rem 1.5rem",
+//                 background: "#000",
+//                 color: "#fff",
+//                 border: "none",
+//                 borderRadius: "8px",
+//                 cursor: "pointer",
+//               }}
+//             >
+//               Tutup
+//             </button>
+//           </div>
+//         </div>
+//       )}
 //     </section>
 //   );
 // };
