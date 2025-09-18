@@ -61,20 +61,6 @@ const Header = () => {
 
             <li className="nav__item">
               <Link
-                to="/#payment"
-                onClick={() => setActiveNav("#payment")}
-                className={
-                  activeNav === "#payment"
-                    ? "nav__link active-link"
-                    : "nav__link"
-                }
-              >
-                <i className="uil uil-message nav__icon"></i> Payment
-              </Link>
-            </li>
-
-            <li className="nav__item">
-              <Link
                 to="/#contact"
                 onClick={() => setActiveNav("#contact")}
                 className={
@@ -84,6 +70,20 @@ const Header = () => {
                 }
               >
                 <i className="uil uil-message nav__icon"></i> Registration
+              </Link>
+            </li>
+
+            <li className="nav__item">
+              <Link
+                to="/#payment"
+                onClick={() => setActiveNav("#payment")}
+                className={
+                  activeNav === "#payment"
+                    ? "nav__link active-link"
+                    : "nav__link"
+                }
+              >
+                <i className="uil uil-message nav__icon"></i> Payment
               </Link>
             </li>
           </ul>
